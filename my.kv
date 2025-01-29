@@ -1,0 +1,167 @@
+<LoginScreen>:
+    email: email
+    password: password
+    
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 0.9, 0.9, 0.9, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 40
+            spacing: 20
+            size_hint: 0.8, 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            
+            Label:
+                text: 'Login'
+                font_size: '24sp'
+                size_hint_y: None
+                height: '40dp'
+                color: 0.2, 0.2, 0.2, 1
+            
+            TextInput:
+                id: email
+                hint_text: 'Email'
+                multiline: False
+                size_hint_y: None
+                height: '40dp'
+                write_tab: False
+                
+            TextInput:
+                id: password
+                hint_text: 'Password'
+                password: True
+                multiline: False
+                size_hint_y: None
+                height: '40dp'
+                write_tab: False
+            
+            Button:
+                text: 'Login'
+                size_hint_y: None
+                height: '40dp'
+                background_color: 0.2, 0.6, 1, 1
+                on_release: root.login()
+            
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: None
+                height: '40dp'
+                
+                Label:
+                    text: "Don't have an account?"
+                    color: 0.2, 0.2, 0.2, 1
+                
+                Button:
+                    text: 'Register Here'
+                    background_color: 0, 0, 0, 0
+                    color: 0.2, 0.6, 1, 1
+                    on_release: root.go_to_register()
+
+        Label:
+            text: 'Copyright © 2025 RRS!'
+            color: 1, 0, 0, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'center_x': 0.5, 'y': 0.05}
+            
+        Label:
+            text: 'Biswojeet Patra @ RR'
+            color: 1, 0, 0, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'center_x': 0.5, 'y': 0.02}
+
+<RegisterScreen>:
+    name_input: name_input
+    email: email
+    password: password
+    
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 0.2, 0.6, 1, 1  # Blue background
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 40
+            spacing: 20
+            size_hint: 0.8, 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            
+            Label:
+                text: 'Create Account'
+                font_size: '24sp'
+                size_hint_y: None
+                height: '40dp'
+                color: 1, 1, 1, 1  # White text
+            
+            TextInput:
+                id: name_input
+                hint_text: 'Name'
+                multiline: False
+                size_hint_y: None
+                height: '40dp'
+                write_tab: False
+                
+            TextInput:
+                id: email
+                hint_text: 'Email'
+                multiline: False
+                size_hint_y: None
+                height: '40dp'
+                write_tab: False
+                
+            TextInput:
+                id: password
+                hint_text: 'Password'
+                password: True
+                multiline: False
+                size_hint_y: None
+                height: '40dp'
+                write_tab: False
+            
+            Button:
+                text: 'Register'
+                size_hint_y: None
+                height: '40dp'
+                background_color: 1, 1, 1, 1  # White button
+                color: 0.2, 0.6, 1, 1  # Blue text
+                on_release: root.register()
+            
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: None
+                height: '40dp'
+                
+                Label:
+                    text: "Already have an account?"
+                    color: 1, 1, 1, 1  # White text
+                
+                Button:
+                    text: 'Login Here'
+                    background_color: 0, 0, 0, 0
+                    color: 1, 1, 1, 1  # White text
+                    on_release: root.go_to_login()
+
+        Label:
+            text: 'Copyright © 2025 RRS!'
+            color: 1, 1, 1, 1  # White text
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'center_x': 0.5, 'y': 0.05}
+            
+        Label:
+            text: 'Biswojeet Patra @ RR'
+            color: 1, 1, 1, 1  # White text
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'center_x': 0.5, 'y': 0.02}
